@@ -4,6 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// Using ... can be removed before submission as they're not needed. You can remove now and editor would add back whatever is needed as you continue.
+// Not a big deal if you leave them however I would advise removing. 
+
+
+
 namespace CMP1903M_Assessment_1_Base_Code
 {
     public class Analyse
@@ -14,6 +19,10 @@ namespace CMP1903M_Assessment_1_Base_Code
         //Arguments: string
         //Returns: list of integers
         //Calculates and returns an analysis of the text
+        
+        //Should be AnalyseText as it's a method. 
+        
+        
         public List<int> analyseText(string input)
         {
             input = input.Replace(" ", string.Empty);
@@ -29,6 +38,9 @@ namespace CMP1903M_Assessment_1_Base_Code
 
             foreach (char c in input)
             {
+                
+                //Can convert into a foreach loop - improves readability. 
+                
                 for (int i = 0; i < vowels.Length; i++)
                 {
                     if (vowels[i] == c.ToString())
@@ -37,6 +49,8 @@ namespace CMP1903M_Assessment_1_Base_Code
                         uppercase++;
                         presence = true;
                     }
+
+                    //Should be lowerVowel to keep with style of code. 
 
                     string lowervowel = vowels[i].ToLower();
                     if (lowervowel == c.ToString())
@@ -56,6 +70,9 @@ namespace CMP1903M_Assessment_1_Base_Code
                         presence=true;
                     }
                     
+                    
+                    //Should be lowerConsonant to keep with style of code. 
+                    
                     string lowerconsonant = consonants[j].ToLower();
                     if (lowerconsonant == c.ToString()) 
                     {
@@ -70,6 +87,9 @@ namespace CMP1903M_Assessment_1_Base_Code
 
                 if (c.ToString() == "*")
                 {
+                    
+                    //This is redundant as it's always true but I'm sure you're eventually going to change this - if not just add to sentences. 
+                    
                     if (presence == true)
                     {
                         sentences++;

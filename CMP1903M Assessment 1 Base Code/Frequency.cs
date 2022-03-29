@@ -10,6 +10,12 @@ namespace CMP1903M_Assessment_1_Base_Code
     {
         public void frequencyOfLetters(string input)
         {
+            
+            //just a dictionary - not a method or class - should be just alphabet ass the name for this dictionary as it looks like a class etc
+            
+
+            //This could be made shorter by looping through the ASCII characters and initialising the dictionary with them although this method works just as well. 
+            
             Dictionary<string, int> Alphabet = new Dictionary<string, int>()
             {
             {"a", 0},
@@ -41,6 +47,15 @@ namespace CMP1903M_Assessment_1_Base_Code
             };
 
             input = input.ToLower();
+            
+            //This can be converted into a LINQ statement to reduce size  - Example below 
+            
+            foreach (var letter in input.Select(l => l.ToString()).Where(letter => Alphabet.ContainsKey(letter)))
+            {
+                Alphabet[letter]++;
+            }
+            
+
             foreach (char l in input)
             {
                 string letter = l.ToString();
@@ -50,6 +65,10 @@ namespace CMP1903M_Assessment_1_Base_Code
                 }
             }
 
+            //The same can be done here - there is also a marginal increase in performance with this as well as you're not looping through it.
+            //LINQ is arguably already well optimised.
+            
+            
             foreach (var value in Alphabet)
                 if (value.Value > 0)
                 {
