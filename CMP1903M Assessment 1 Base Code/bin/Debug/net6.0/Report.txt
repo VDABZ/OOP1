@@ -1,0 +1,5 @@
+The number of sentences are 1
+The number of vowels are 189
+The number of cons are 317
+The number of uppercase letters are 9
+The number of lowercase letters are 497
